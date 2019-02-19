@@ -1,0 +1,15 @@
+chest_source_dir = src
+chest_binary_dir = build
+chest_etc_dir = etc
+chest_test_dir = test
+sysroot = /home/tiannian/.chest
+sysroot_bin = $sysroot/bin
+sysroot_etc = $sysroot/etc
+
+# build object
+build $chest_binary_dir/src/ecode.o: cxx $chest_source_dir/ecode.cpp
+build $chest_binary_dir/src/utils.o: cxx $chest_source_dir/utils.cpp
+
+build $chest_binary_dir/test/test_ecode.o: cxx $chest_test_dir/test_ecode.cpp
+
+build $chest_binary_dir/test/test_ecode: link $chest_binary_dir/test/test_ecode.o $chest_binary_dir/src/ecode.o $chest_binary_dir/src/utils.o
