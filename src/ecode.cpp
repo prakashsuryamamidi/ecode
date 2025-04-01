@@ -1,5 +1,5 @@
 #include "ecode.h"
-#include "utils.h"
+#include "utils.hh"
 
 #include <algorithm>
 
